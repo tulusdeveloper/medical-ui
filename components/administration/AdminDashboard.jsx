@@ -5,7 +5,7 @@ import { Shield, Users, Building, UserCheck } from 'lucide-react';
 const adminModules = [
   { text: "Insurance", href: "/home/administration/insurance", icon: Shield, apiPath: "insurances" },
   { text: "Visit Types", href: "/home/administration/visit-types", icon: Users, apiPath: "visitTypes" },
-  { text: "Departments", href: "/home/administration/departments", icon: Building, apiPath: "departments" },
+  { text: "Departments", href: "/home/administration/department", icon: Building, apiPath: "departments" },
   { text: "User Roles", href: "/home/administration/user-roles", icon: UserCheck, apiPath: "userRoles" },
 ];
 export default function AdminDashboard({ counts }) {

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import AdminDashboard from '@/components/administration/AdminDashboard';  // Adjust this path if necessary
-import { insuranceApi, visitTypeApi } from '@/utils/api';
+import { insuranceApi, visitTypeApi, departmentApi } from '@/utils/api';
 import withAuth from '@/utils/withAuth';
 
 function SystemConfiguration() {
@@ -21,17 +21,19 @@ function SystemConfiguration() {
       const [
         insurancesResponse,
         visitTypesResponse,
+        departmentResponse,
         // Add more API calls here when available
       ] = await Promise.all([
         insuranceApi.fetchInsurances(),
         visitTypeApi.fetchVisitTypes(),
+        departmentApi.fetchDepartments(),
         // Add more API calls here when available
       ]);
 
       setCounts({
         insurances: insurancesResponse.data.length,
         visitTypes: visitTypesResponse.data.length,
-        departments: 0, // Replace with actual count when API is available
+        departments: departmentResponse.data.length, // Replace with actual count when API is available
         userRoles: 0, // Replace with actual count when API is available
       });
     } catch (error) {

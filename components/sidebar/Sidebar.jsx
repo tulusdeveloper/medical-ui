@@ -33,7 +33,7 @@ const navItems = [
   },
   { icon: FileText, text: "Reports", href: "/home/reports" },
   { icon: Settings, text: "Administration", href: "/home/administration" },
-  { icon: Building, text: "Departments", href: "/home/hr/department" },
+  // { icon: Building, text: "Departments", href: "/home/hr/department" },
 ];
 
 export default function Sidebar({ isCollapsed, setIsCollapsed }) {
