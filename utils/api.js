@@ -134,6 +134,15 @@ const visitTypeApi = {
   deleteVisitType: (id) => authenticatedRequest(() => api.delete(`visit-types/${id}/`)),
 };
 
+// Department API Functions
+const departmentApi = {
+  fetchDepartments: () => authenticatedRequest(() => api.get('staff-management/departments/')),
+  fetchDepartment: (id) => authenticatedRequest(() => api.get(`staff-management/departments/${id}/`)),
+  createDepartment: (departmentData) => authenticatedRequest(() => api.post('staff-management/departments/', departmentData)),
+  updateDepartment: (id, departmentData) => authenticatedRequest(() => api.put(`staff-management/departments/${id}/`, departmentData)),
+  deleteDepartment: (id) => authenticatedRequest(() => api.delete(`staff-management/departments/${id}/`)),
+};
+
 // Logout function
 const logout = () => {
   if (typeof window !== 'undefined') {
@@ -143,4 +152,4 @@ const logout = () => {
   }
 };
 
-export { api, laboratoryApi, patientsApi, insuranceApi, visitTypeApi, isAuthenticated, logout };
+export { api, laboratoryApi, patientsApi, insuranceApi, visitTypeApi, departmentApi, isAuthenticated, logout };
